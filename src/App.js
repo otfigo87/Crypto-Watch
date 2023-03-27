@@ -1,9 +1,11 @@
-
+import HeaderInfos from "./components/HeaderInfos";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello React</h1>
+    <div className="app-container">
+      <header>
+        <HeaderInfos />
+      </header>
     </div>
   );
 }
