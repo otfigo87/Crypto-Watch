@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PercentChange from './PercentChange';
 import axios from 'axios';
+import TableFilters from './TableFilters';
 
 const HeaderInfos = () => {
 
@@ -41,6 +42,7 @@ const HeaderInfos = () => {
           ETH Dominance: {headerData.market_cap_percentage && headerData.market_cap_percentage.eth.toFixed(1) + "%"}
         </li>
       </ul>
+      <TableFilters />
     </div>
   );
 }
