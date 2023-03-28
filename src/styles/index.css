@@ -68,4 +68,167 @@ label {
   100% {
     transform: translate(0);
   }
+}
+
+header {
+  margin: 20px 0 25px 0;
+  display: grid;
+  grid-template-columns: 1fr 730px;
+}
+@media screen and (max-width: 1150px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+}
+header .header-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 132px 1fr;
+  padding-right: 10px;
+}
+header .header-container .title,
+header .header-container .infos-mkt {
+  background: rgba(20, 20, 20, 0.85);
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.322);
+  display: grid;
+  align-items: center;
+  height: 132px;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  border-bottom: 2px solid #00b7b3;
+}
+header .header-container .title ul,
+header .header-container .infos-mkt ul {
+  height: 100%;
+}
+header .header-container .title {
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
+}
+header .header-container .title:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+}
+@media screen and (max-width: 1150px) {
+  header .header-container .title:before {
+    top: -8px;
+  }
+}
+header .header-container .title h1 {
+  font-family: "Baloo Bhaina 2", cursive;
+  font-size: 1.5rem;
+  color: #00b7b3;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(360deg, #00b7b3, #0debc6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  height: 36px;
+}
+@media screen and (max-width: 1150px) {
+  header .header-container .title h1 {
+    transform: translateY(-6px);
+  }
+}
+header .header-container .title h1 img {
+  height: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+  transform: translate(3px, -4px);
+}
+header .header-container .global-mkt {
+  display: flex;
+}
+header .header-container .global-mkt p {
+  margin-left: 5px;
+  font-size: 1.1rem;
+}
+@media screen and (max-width: 1150px) {
+  header .header-container .infos-mkt {
+    margin-right: 0;
+  }
+}
+header .header-container .table-filters {
+  grid-area: c;
+  margin-top: 10px;
+}
+header .header-container .table-filters .table-filters-container {
+  display: flex;
+  background: rgb(31, 31, 31);
+  border-radius: 10px;
+  padding: 4px;
+  justify-content: space-between;
+  border-bottom: 1px solid #00b7b3;
+}
+header .header-container .table-filters .table-filters-container .stable-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+header .header-container .table-filters .table-filters-container .stable-checkbox-container #stableCoin {
+  display: none;
+}
+header .header-container .table-filters .table-filters-container .stable-checkbox-container #stableCoin:checked ~ label {
+  background: rgb(10, 10, 10);
+}
+header .header-container .table-filters .table-filters-container .stable-checkbox-container #stableCoin ~ label {
+  transition: 0.15s;
+  padding: 2px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+header .header-container .table-filters .table-filters-container .stable-checkbox-container #stableCoin ~ label:hover {
+  filter: brightness(130%);
+}
+header .header-container .table-filters .table-filters-container .no-list-btn,
+header .header-container .table-filters .table-filters-container .fav-list {
+  transition: 0.15s;
+  border-radius: 10px;
+  padding: 2px 10px;
+  cursor: pointer;
+}
+header .header-container .table-filters .table-filters-container .no-list-btn:hover,
+header .header-container .table-filters .table-filters-container .fav-list:hover {
+  filter: brightness(130%);
+}
+header .header-container .table-filters .table-filters-container .no-list-btn.active,
+header .header-container .table-filters .table-filters-container .fav-list.active {
+  background: rgb(10, 10, 10);
+}
+header .header-container .table-filters .table-filters-container .fav-list {
+  display: flex;
+  align-items: center;
+}
+header .header-container .table-filters .table-filters-container .fav-list img {
+  height: 14px;
+  margin-left: 5px;
+}
+header .global-chart {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.322);
+}
+@media screen and (max-width: 1150px) {
+  header .global-chart {
+    display: none;
+  }
+}
+header .global-chart text {
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
+}
+header .global-chart .custom-tooltip {
+  background: rgb(59, 59, 59);
+  padding: 10px;
 }/*# sourceMappingURL=index.css.map */
