@@ -23,7 +23,15 @@ const Table = ({ coinsData }) => {
         {tableHeader.map((el) => (
            <li key={el}>
             <input type="radio" name="header-el" id={el} 
-            defaultChecked={ el === orderBy || el === orderBy + "reverse" ? true : false} />
+            defaultChecked={ el === orderBy || el === orderBy + "reverse" ? true : false}
+            onClick={() => {
+                if(orderBy === el){
+                setOrderBy(el + "reverse")
+                } else {
+                    setOrderBy(el)
+                }
+            }} />
+            <label htmlFor={el}>{el}</label>
            </li> 
         ))}
       </div>
