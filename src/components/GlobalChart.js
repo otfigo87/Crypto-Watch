@@ -1,10 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Treemap, Tooltip } from "recharts";
+import colors from '../styles/_settings.scss';
 
 const GlobalChart = ({coinsData}) => {
     // console.log(coinsData)
 
     const [dataArray, setDataArray] = useState([])
+    //colors picker function
+    const colorPicker = (num) => {
+        if(num >= 20){
+            return colors.color1
+        }else if(num >= 5){
+            return colors.green2;
+        }else if(num >= 0){
+            return colors.green1;
+        }else if(num >= -5){
+            return colors.red1;    
+        }else if(num >= -20){
+            return colors.red2;   
+        }else {
+            return colors.black2;
+        }     
+    }
 
     useEffect(() => {
         let chartData = [];
@@ -13,7 +30,7 @@ const GlobalChart = ({coinsData}) => {
                 chartData.push({ 
                     name: coinsData[i].symbol.toUpperCase() + " " + coinsData[i].market_cap_change_percentage_24h.toFixed(1) + "%", 
                     size: coinsData[i].market_cap,
-                    fill: null,
+                    fill: colorPicker(coinsData[i].price_change_percentage_24h),
                 })
             }
         }
