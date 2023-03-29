@@ -2,6 +2,7 @@ import GlobalChart from "./components/GlobalChart";
 import HeaderInfos from "./components/HeaderInfos";
 import {useEffect, useState} from 'react';
 import axios from 'axios';
+import Table from "./components/Table";
 
 function App() {
 
@@ -13,12 +14,15 @@ function App() {
     ).then((res) => setCoinsData(res.data))
     .catch(err => console.log(err))
   },[])
+
+  console.log(coinsData)
   return (
     <div className="app-container">
       <header>
         <HeaderInfos />
         <GlobalChart coinsData={coinsData}/>
       </header>
+      <Table coinsData={coinsData}/>
     </div>
   );
 }
