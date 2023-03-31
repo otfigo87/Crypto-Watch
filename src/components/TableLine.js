@@ -1,5 +1,6 @@
 import React from 'react';
 import PercentChange from './PercentChange';
+import StarIcon from "./StarIcon"
 
 //StackOverFlow => format price number 
 const priceFormat = (number) => {
@@ -23,7 +24,7 @@ const TableLine = ({coin, index}) => {
   return (
     <div className="table-line">
       <div className="infos-container">
-        <span>*</span>
+        <StarIcon coinId={coin.id} />
         <p>{index + 1}</p>
         <div className="img">
           <img src={coin.image} alt="logo" height="20" />
