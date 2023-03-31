@@ -1,26 +1,29 @@
-import React from 'react';
-import PercentChange from './PercentChange';
-import StarIcon from "./StarIcon"
+import React, { useState } from "react";
+import PercentChange from "./PercentChange";
+import StarIcon from "./StarIcon";
+import CoinChart from "./CoinChart";
 
-//StackOverFlow => format price number 
+//StackOverFlow => format price number
 const priceFormat = (number) => {
-  if(Math.round(number).toString().length < 4 ) {
+  if (Math.round(number).toString().length < 4) {
     return new Intl.NumberFormat("us-US", {
       minimumFractionDigits: 2,
-      maximumFractionDigits: 7
+      maximumFractionDigits: 7,
     }).format(number);
   } else {
-    return number
+    return number;
   }
-}
+};
 //format marketCap number (6 numbers)
 const mktCapFormat = (number) => {
   let newNum = String(number).split("").slice(0, -6);
-  return Number(newNum.join(""))
+  return Number(newNum.join(""));
 };
 
+const TableLine = ({ coin, index }) => {
+  //show chart onMouseEnter the chart icon
+  const [showChart, setShowChart] = useState(false);
 
-const TableLine = ({coin, index}) => {
   return (
     <div className="table-line">
       <div className="infos-container">
@@ -30,8 +33,15 @@ const TableLine = ({coin, index}) => {
           <img src={coin.image} alt="logo" height="20" />
         </div>
         <div className="infos">
-          <div className="chart-img">
+          <div
+            className="chart-img"
+            onMouseEnter={() => setShowChart(true)}
+            onMouseLeave={() => setShowChart(false)}
+          >
             <img src="./assets/chart-icon.svg" alt="chart-icon" />
+            <div className="chart-container" id={coin.id}>
+              {showChart && <CoinChart coinId={coin.id}  coinName={coin.name}/>}
+            </div>
           </div>
 
           <h4>{coin.name}</h4>
@@ -63,6 +73,6 @@ const TableLine = ({coin, index}) => {
       )}
     </div>
   );
-}
+};
 
-export default TableLine
+export default TableLine;

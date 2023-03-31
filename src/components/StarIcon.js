@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const StarIcon = ({coinId}) => {
-    console.log(coinId)
+    // console.log(coinId)
 
     const [fav, setFav] = useState(false);
 
