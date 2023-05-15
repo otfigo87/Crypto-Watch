@@ -18,7 +18,7 @@ const TableFilters = () => {
           <input type="checkbox" id="stableCoin" defaultChecked={true}
           onChange={() => setShowStable(!showStable)} />
           <label htmlFor="stableCoin" >
-            With Stable Coins
+             {showStable ? "With Stable Coins" : "No Stable Coins"}   
           </label>
         </div>
         <div className="no-list-btn">
