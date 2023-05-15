@@ -10,6 +10,8 @@ const StarIcon = ({coinId}) => {
             let favList = localStorage.coinList.split(",")
             if(favList.includes(coinId)){
                 setFav(true)
+            } else {
+                setFav(false);
             }
         }
     },[coinId]);
