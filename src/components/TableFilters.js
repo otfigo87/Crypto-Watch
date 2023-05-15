@@ -31,7 +31,7 @@ const TableFilters = () => {
         <div className={ showFavList ? "no-list-btn" : "no-list-btn active"} onClick={() => setShowFavList(false)}>
           <p>No List</p>
         </div>
-        <div className={showFavList ? "fav-list" : "fav-list" } onClick={() => setShowFavList(true)}>
+        <div className={showFavList ? "fav-list active" : "fav-list" } onClick={() => setShowFavList(true)}>
           <p>Favorites</p>
           <img src="./assets/star-full.svg" alt="icon star" />
         </div>

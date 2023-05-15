@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import TableLine from "./TableLine";
 import ToTop from "./ToTop";
+import { useSelector } from "react-redux";
 
 const Table = ({ coinsData }) => {
   const [rangeNumber, setRangeNumber] = useState(100);
 
   const tableHeader = ["Price", "MarketCap", "Volume", "1h", "1d", "1w", "1m", "6m", "1y", "ATH"]
-  const [orderBy, setOrderBy] = useState("")
+  const [orderBy, setOrderBy] = useState("");
+
+  const showFavList = useSelector((state) => state.listReducer.showList);
   return (
     <div className="table-container">
       <ul className="table-header">
@@ -50,7 +53,19 @@ const Table = ({ coinsData }) => {
         ))}
       </ul>
       {coinsData &&
-        coinsData.slice(0, rangeNumber).sort((a, b) => {
+        coinsData.slice(0, rangeNumber)
+        .filter((coin) => {
+          if(showFavList) {
+            let list = localStorage.coinList.split(",");
+            // console.log(list);
+            if(list.includes(coin.id)){
+              return coin;
+            }
+          } else {
+            return coin;
+          }
+        })
+        .sort((a, b) => {
           switch (orderBy) {
             case "Price":
               return b.current_price - a.current_price;
