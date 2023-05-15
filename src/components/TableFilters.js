@@ -28,10 +28,10 @@ const TableFilters = () => {
             {showStable ? "With Stable Coins" : "No Stable Coins"}
           </label>
         </div>
-        <div className="no-list-btn" onClick={() => setShowFavList(false)}>
+        <div className={ showFavList ? "no-list-btn" : "no-list-btn active"} onClick={() => setShowFavList(false)}>
           <p>No List</p>
         </div>
-        <div className="fav-list" onClick={() => setShowFavList(true)}>
+        <div className={showFavList ? "fav-list" : "fav-list" } onClick={() => setShowFavList(true)}>
           <p>Favorites</p>
           <img src="./assets/star-full.svg" alt="icon star" />
         </div>
