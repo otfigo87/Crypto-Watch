@@ -1,4 +1,11 @@
-# Crypto Watch Tower
+# Crypto Watch Tower   
+
+ Crypto-Watch provides a fundamental analysis of the crypto market. In addition to tracking price, volume and market capitalisation, Crypto-Watch tracks community growth, open-source code development, major events and on-chain metrics.
+
+## ScreenShot
+
+![App Screenshot](./public/assets/Screenshot.png)
+
 
 Market data : `https://api.coingecko.com/api/v3/global`
 

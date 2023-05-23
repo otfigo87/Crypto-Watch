@@ -29,7 +29,7 @@ const TableFilters = () => {
           </label>
         </div>
         <div className={ showFavList ? "no-list-btn" : "no-list-btn active"} onClick={() => setShowFavList(false)}>
-          <p>No List</p>
+          <p>List Of Coins</p>
         </div>
         <div className={showFavList ? "fav-list active" : "fav-list" } onClick={() => setShowFavList(true)}>
           <p>Favorites</p>
