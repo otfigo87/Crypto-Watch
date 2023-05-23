@@ -54,7 +54,7 @@ const Table = ({ coinsData }) => {
       </ul>
       {coinsData &&
         coinsData.slice(0, rangeNumber)
-        .filter((coin) => {
+        .filter(coin => {
           if(showFavList) {
             let list = localStorage.coinList.split(",");
             // console.log(list);
