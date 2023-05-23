@@ -60,6 +60,8 @@ const Table = ({ coinsData }) => {
             // console.log(list);
             if(list.includes(coin.id)){
               return coin;
+            } else {
+              return null;
             }
           } else {
             return coin;
